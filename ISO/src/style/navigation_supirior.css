@@ -1,0 +1,52 @@
+/* Barra superior */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 220px; /* igual al ancho del sidebar */
+  right: 0;
+  height: 70px;
+  background-color: #412727; /* mismo color del sidebar */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  z-index: 1500; /* por encima del sidebar */
+}
+
+/* Título */
+.topbar-title {
+  color: #f9e65c; /* amarillo del logo */
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Contenedor del usuario */
+.topbar-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.topbar-user:hover {
+  background-color: #f9e65c;
+  color: #2e2e2e;
+}
+
+/* Icono */
+.user-icon {
+  font-size: 1.3rem;
+}
+
+/* Flecha */
+.user-arrow {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}

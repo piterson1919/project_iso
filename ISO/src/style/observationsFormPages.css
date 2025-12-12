@@ -1,0 +1,163 @@
+/* === Contenedor principal dividido === */
+.observation-split {
+  display: flex;
+  width: calc(100vw - 220px);
+  height: 100vh;
+  margin-left: 220px;
+  box-sizing: border-box;
+}
+
+/* === Sección izquierda: formulario === */
+.observation-left {
+  flex: 1;
+  padding: 1.6rem; /* un poco más grande */
+  overflow-y: auto;
+  background-color: #be8734;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 4rem;
+}
+
+/* Contenedor del formulario */
+.observation-container {
+  background-color: #412727;
+  border-radius: 14px; /* intermedio */
+  padding: 1.8rem 2rem; /* intermedio */
+  width: 100%;
+  max-width: 460px; /* más grande que antes */
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
+  animation: slideIn 0.6s ease forwards;
+}
+
+/* Encabezado */
+.observation-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.observation-logo {
+  font-size: 1.6rem; /* intermedio */
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 1.7px;
+  margin-bottom: 0.4rem;
+}
+
+.observation-title {
+  color: #fff;
+  font-size: 1.25rem; /* intermedio */
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Formulario */
+.observation-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* intermedio */
+}
+
+/* Grupos del formulario */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #ffd700;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem; /* intermedio */
+}
+
+/* Inputs, selects y textarea */
+.form-input,
+.form-select,
+.form-textarea {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.65rem; /* intermedio */
+  font-size: 0.95rem; /* intermedio */
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #ffd700;
+  background-color: #4b4b4b;
+}
+
+/* Textarea */
+.form-textarea {
+  min-height: 90px; /* intermedio */
+  resize: vertical;
+}
+
+/* Errores */
+.form-error {
+  color: #ff4444;
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem; /* intermedio */
+  font-size: 0.95rem; /* intermedio */
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6c200;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  border-radius: 10px;
+  padding: 0.7rem; /* intermedio */
+  width: 100%;
+  font-weight: 600;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-delete:hover {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+/* === Sección derecha: lista de observaciones === */
+.observation-right {
+  flex: 1;
+  padding: 1.6rem; /* intermedio */
+  overflow-y: auto;
+  background-color: #be8734;
+  margin-top: 2rem;
+}
+
+/* Animaciones */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

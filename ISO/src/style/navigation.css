@@ -1,0 +1,56 @@
+/* Contenedor lateral */
+.sidebar {
+  position: fixed;       /* fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 220px;          /* ancho de la barra lateral */
+  height: 100vh;         /* altura completa */
+  background-color: #412727; /* gris oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  box-shadow: 2px 0 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* Logo en la barra */
+.sidebar-logo {
+  font-size: 1.8rem;
+  color: #f9e65c;       /* amarillo */
+  margin-bottom: 3rem;
+  font-weight: bold;
+}
+
+/* Lista de links */
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+/* Cada link */
+.sidebar-links li {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sidebar-links li a {
+  text-decoration: none;
+  color: #fff;           /* blanco sobre gris oscuro */
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: block;
+  padding: 0.6rem 0;
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+/* Hover elegante */
+.sidebar-links li a:hover {
+  background-color: #f9e65c; /* amarillo de la app */
+  color: #2e2e2e;             /* texto gris oscuro */
+  border-left: 4px solid #000; /* resalta borde izquierdo */
+  border-radius: 0 8px 8px 0;  /* bordes redondeados en hover */
+}

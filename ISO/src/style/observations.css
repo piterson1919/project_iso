@@ -1,0 +1,72 @@
+/* === Animación de entrada === */
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Panel principal === */
+.observation-page {
+  background-color: #be8734; /* fondo principal */
+  height: 100vh; /* altura exacta de la pantalla */
+  width: 100vw; /* ancho exacto, sin recortes */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 2rem 2rem; /* espacio superior para que no se corte la primera tarjeta */
+  box-sizing: border-box;
+  overflow-y: auto; /* solo scroll vertical */
+  overflow-x: hidden; /* elimina scroll horizontal */
+  scroll-behavior: smooth;
+  animation: fadeInPage 0.8s ease forwards;
+
+}
+
+/* === Lista de observaciones === */
+.observations-list {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  overflow: visible; /* evita scroll interno */
+}
+
+/* === Tarjetas === */
+.observation-card {
+  margin-top: 0.5rem;
+}
+
+/* === Texto cuando no hay observaciones === */
+.empty-list {
+  color: #ffd700;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 3rem;
+}
+
+/* === Scrollbar personalizada === */
+.observation-page::-webkit-scrollbar {
+  width: 10px;
+}
+
+.observation-page::-webkit-scrollbar-track {
+  background: #2b2f36;
+  border-radius: 10px;
+}
+
+.observation-page::-webkit-scrollbar-thumb {
+  background: #ffd700;
+  border-radius: 10px;
+}
+
+.observation-page::-webkit-scrollbar-thumb:hover {
+  background: #e6c200;
+}

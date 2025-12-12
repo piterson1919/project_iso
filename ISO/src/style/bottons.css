@@ -1,0 +1,115 @@
+/* === Fondo general (opcional si los botones están en una pantalla separada) === */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: url("") no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* === Contenedor con efecto de cristal oscuro === */
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  padding: 2.5rem 3rem;
+  background: rgba(25, 25, 25, 0.55); /* Opacidad controlada */
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.5),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* === Animación de aparición === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Estilo base de los botones === */
+.register-button,
+.login-button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 14px 38px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 17px;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.4),
+    0 10px 35px rgba(0, 0, 0, 0.35); /* sombra más profunda */
+}
+
+/* === Luz suave en la superficie === */
+.register-button::before,
+.login-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(255, 255, 255, 0.25),
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* === Botón REGISTRO (amarillo oscuro elegante) === */
+.register-button {
+  background: linear-gradient(145deg, #ffdd44, #e6b800);
+  color: #333;
+}
+
+.register-button:hover {
+  background: linear-gradient(145deg, #ffe066, #ffcc00);
+  transform: translateY(-6px);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.register-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* === Botón LOGIN (gris-blanco moderno) === */
+.login-button {
+  background: linear-gradient(145deg, #f0f0f0, #d9d9d9);
+  color: #333;
+}
+
+.login-button:hover {
+  background: linear-gradient(145deg, #ffffff, #ececec);
+  transform: translateY(-6px);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.5),
+    0 20px 45px rgba(0, 0, 0, 0.4);
+}
+
+.login-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* === Versión responsiva === */
+@media (max-width: 768px) {
+  .buttons-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 2rem;
+  }
+}
