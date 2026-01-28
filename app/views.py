@@ -18,11 +18,13 @@ User = get_user_model()
 @method_decorator(csrf_exempt, name='dispatch')
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
+    serializer_class = RegisterSerializer
     permission_classes = [AllowAny]
     authentication_classes = []
 
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
+
         serializer.is_valid(raise_exception=True)
 
         #  Crear usuario
@@ -54,7 +56,7 @@ class LoginView(APIView):
         if serializer.is_valid():
             user = serializer.validated_data["user"]
 
-            # ✅ Crear o recuperar token
+            #Crear o recuperar token
             token, created = Token.objects.get_or_create(user=user)
 
             return Response({
@@ -70,7 +72,7 @@ class LoginView(APIView):
         return Response(serializer.errors, status=status.HTTP_401_UNAUTHORIZED)
 
 
-# ✅ CRUD Observaciones con Token
+#  CRUD Observaciones con Token
 @method_decorator(csrf_exempt, name='dispatch')
 class ObservationsViewset(viewsets.ModelViewSet):
     queryset = Observations.objects.all()
@@ -79,7 +81,7 @@ class ObservationsViewset(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication]
 
 
-# ✅ Usuario actual usando Token
+# Usuario actual usando Token
 class CurrentUserView(APIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [TokenAuthentication]

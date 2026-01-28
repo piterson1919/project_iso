@@ -6,12 +6,20 @@ from rest_framework.response import Response
 from .models import Observations
 
 # modelo de user custom
+
 User = get_user_model()
 
-# serializer de registro que incluye el password2  para validadar que la contrasenia sea la que desea  
+# serializer de registro que incluye el password2  para validadar que la contrasenia sea la que desea
+
 #posee la fase de validar el email y creacion de el usuario si todo es valido
 
 class RegisterSerializer(serializers.ModelSerializer):
+
+    username = serializers.CharField(
+        max_length=150,
+        validators=[],
+    )
+
     password = serializers.CharField(write_only=True, validators=[validate_password])
     password2 = serializers.CharField(write_only=True)
 
@@ -43,6 +51,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 class LoginSerializer(serializers.ModelSerializer):
     username = serializers.CharField()
     # se coloca de esta forma para que par que el password no se pueda mostra en el json 
+
     password = serializers.CharField(write_only=True)
 
     class Meta:

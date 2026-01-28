@@ -8,11 +8,11 @@ export default function LoginForm() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  // ✅ Manejar cambios en los inputs
+  //  Manejar cambios en los inputs
   const handleChange = e =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  // ✅ Enviar formulario
+  //  Enviar formulario
   const handleSubmit = async e => {
     e.preventDefault();
     setError('');
@@ -36,7 +36,7 @@ export default function LoginForm() {
         localStorage.setItem("token", data.token);
 
 
-        // ✅ Redirigir
+        //  Redirigir
         navigate('/observations');
       } else {
         setError(data.detail || 'Usuario o contraseña inválidos');

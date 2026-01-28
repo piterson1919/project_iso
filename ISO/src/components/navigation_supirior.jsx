@@ -1,7 +1,7 @@
-// Navigation_superior.jsx
 import { useEffect, useState } from "react";
 import axios from "axios";
 import "../style/navigation_supirior.css";
+import Avatar from "./avatar"; // ← IMPORTANTE
 
 export function Navigation_superior() {
   const [username, setUsername] = useState(null);
@@ -32,9 +32,11 @@ export function Navigation_superior() {
       <h2 className="topbar-title">Foot Safe</h2>
 
       <div className="topbar-user">
-        <span className="user-icon">👤</span>
+        {/* 🔵 Reemplazo del icono por el avatar */}
+        <Avatar username={username} size={35} />
+
         <span className="user-name">{username || "Usuario"}</span>
-        <span className="user-arrow">▼</span>
+        
       </div>
     </header>
   );

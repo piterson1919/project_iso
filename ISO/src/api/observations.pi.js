@@ -31,3 +31,8 @@ export const updateObservations = (id, data) =>
 // ✅ Eliminar una observación
 export const DeleteObservations = (id) =>
   axios.delete(`${BASE_URL}${id}/`, authHeaders());
+
+export const setToken = (token) => {
+  localStorage.setItem("token", token);
+};
+
