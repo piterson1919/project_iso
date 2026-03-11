@@ -1,10 +1,12 @@
 import { ListObservations } from "../components/observationsList";
-import "../style/observations.css"; // importa el nuevo CSS
+import "../style/observations.css";
 
 export function ObservationPages() {
   return (
+    
     <div className="observation-page">
-      <ListObservations />
+      
+    <ListObservations />
     </div>
   );
 }

@@ -1,43 +1,75 @@
-/* === Contenedor principal dividido === */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Contenedor principal === */
 .observation-split {
   display: flex;
   width: calc(100vw - 220px);
-  height: 100vh;
-  margin-left: 220px;
+  height: calc(100vh - 60px); 
+  margin-left: 220px; 
+  margin-top: 60px; 
+  overflow: hidden; 
+  background-color: #be8734;
   box-sizing: border-box;
 }
 
-/* === Sección izquierda: formulario === */
+/* === IZQUIERDA: formulario === */
 .observation-left {
-  flex: 1;
-  padding: 1.6rem; /* un poco más grande */
-  overflow-y: auto;
+  flex: 0 0 45%;
+  padding: 1.6rem;
   background-color: #be8734;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 4rem;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
 }
 
-/* Contenedor del formulario */
+/* === Scrollbar izquierda oculta visualmente === */
+.observation-left::-webkit-scrollbar {
+  width: 10px;
+}
+
+.observation-left::-webkit-scrollbar-thumb {
+  background-color: #be8734; /* mismo color que el fondo */
+}
+
+.observation-left::-webkit-scrollbar-track {
+  background-color: #be8734;
+}
+
+/* Firefox */
+.observation-left {
+  scrollbar-width: thin;
+  scrollbar-color: #be8734 #be8734;
+}
+
 .observation-container {
   background-color: #412727;
-  border-radius: 14px; /* intermedio */
-  padding: 1.8rem 2rem; /* intermedio */
+  border-radius: 14px;
+  padding: 1.8rem 2rem;
   width: 100%;
-  max-width: 460px; /* más grande que antes */
+  max-width: 460px;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
   animation: slideIn 0.6s ease forwards;
 }
 
-/* Encabezado */
 .observation-header {
   text-align: center;
   margin-bottom: 1.2rem;
 }
 
 .observation-logo {
-  font-size: 1.6rem; /* intermedio */
+  font-size: 1.6rem;
   font-weight: 800;
   color: #ffd700;
   letter-spacing: 1.7px;
@@ -45,20 +77,19 @@
 }
 
 .observation-title {
-  color: #fff;
-  font-size: 1.25rem; /* intermedio */
+  color: #ffffff;
+  font-size: 1.25rem;
   margin: 0;
   font-weight: 600;
 }
 
-/* Formulario */
+/* === Formulario === */
 .observation-form {
   display: flex;
   flex-direction: column;
-  gap: 1rem; /* intermedio */
+  gap: 1rem;
 }
 
-/* Grupos del formulario */
 .form-group {
   display: flex;
   flex-direction: column;
@@ -68,10 +99,9 @@
   color: #ffd700;
   font-weight: 600;
   margin-bottom: 0.25rem;
-  font-size: 0.95rem; /* intermedio */
+  font-size: 0.95rem;
 }
 
-/* Inputs, selects y textarea */
 .form-input,
 .form-select,
 .form-textarea {
@@ -79,8 +109,8 @@
   color: #000000;
   border: 2px solid transparent;
   border-radius: 8px;
-  padding: 0.65rem; /* intermedio */
-  font-size: 0.95rem; /* intermedio */
+  padding: 0.65rem;
+  font-size: 0.95rem;
   transition: all 0.2s ease;
 }
 
@@ -89,31 +119,29 @@
 .form-textarea:focus {
   outline: none;
   border-color: #ffd700;
-  background-color: #4b4b4b;
+  background-color: #ffffff;
+  color: #000000;
 }
 
-/* Textarea */
 .form-textarea {
-  min-height: 90px; /* intermedio */
+  min-height: 90px;
   resize: vertical;
 }
 
-/* Errores */
 .form-error {
   color: #ff4444;
   font-size: 0.8rem;
   margin-top: 0.15rem;
 }
 
-/* Botones */
 .btn-primary {
   background-color: #ffd700;
   color: #1a1a1a;
   font-weight: 700;
   border: none;
   border-radius: 10px;
-  padding: 0.8rem; /* intermedio */
-  font-size: 0.95rem; /* intermedio */
+  padding: 0.8rem;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: background-color 0.25s ease, transform 0.2s ease;
 }
@@ -128,7 +156,7 @@
   color: #ff4444;
   border: 2px solid #ff4444;
   border-radius: 10px;
-  padding: 0.7rem; /* intermedio */
+  padding: 0.7rem;
   width: 100%;
   font-weight: 600;
   margin-top: 0.9rem;
@@ -141,23 +169,68 @@
   color: #fff;
 }
 
-/* === Sección derecha: lista de observaciones === */
-.observation-right {
-  flex: 1;
-  padding: 1.6rem; /* intermedio */
-  overflow-y: auto;
-  background-color: #be8734;
-  margin-top: 2rem;
+/* === Campo de adjunto === */
+.form-note {
+  color: #fff;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
 }
 
-/* Animaciones */
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(22px);
+/* === DERECHA: lista de observaciones === */
+.observation-right {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #be8734;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* --- Scrollbar personalizada (derecha) --- */
+.observation-right::-webkit-scrollbar {
+  width: 10px;
+}
+
+.observation-right::-webkit-scrollbar-thumb {
+  background: #f9e65c;
+  border-radius: 10px;
+}
+
+.observation-right::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+
+/* --- Ajuste interno para las ObservationCards --- */
+.observation-right .observations-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ dos columnas */
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 1300px) {
+  .observation-split {
+    flex-direction: column;
+    height: auto;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .observation-left,
+  .observation-right {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .observation-right .observations-list {
+    grid-template-columns: 1fr;
   }
 }

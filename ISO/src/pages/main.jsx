@@ -4,6 +4,7 @@ import "../style/main.css";
 
 export default function Main() {
   return (
+    
     <div className="main-background">
       <div className="main-panel">
         <h1 className="main-title">QMS FOOTSAFE</h1>

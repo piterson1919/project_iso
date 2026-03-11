@@ -1,0 +1,40 @@
+/* Página general */
+body{
+    background-color: #be8734;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+.dashboard-page {
+  margin-left: 220px; /* ancho de tu sidebar */
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  color: #2e2e2e;
+}
+
+.dashboard-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Contenido centrado */
+.dashboard-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: -3rem; 
+}

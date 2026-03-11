@@ -12,10 +12,11 @@ export function Navigation_superior() {
         const token = localStorage.getItem("token");
         if (!token) return;
 
-        const res = await axios.get(
-          "http://localhost:8000/api/app/user/",
-          { headers: { Authorization: `Token ${token}` } }
-        );
+       const res = await axios.get(
+        "/api/app/user/",
+        { headers: { Authorization: `Token ${token}` } }
+);
+
 
         setUsername(res.data.username || res.data.user?.username);
 

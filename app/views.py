@@ -1,3 +1,5 @@
+import os
+from django.conf import settings
 from rest_framework import generics, viewsets, status
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.authentication import TokenAuthentication
@@ -7,6 +9,7 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import api_view
 
 from .serializers import RegisterSerializer, LoginSerializer, ObservationsSerializer
 from .models import Observations
@@ -93,3 +96,49 @@ class CurrentUserView(APIView):
             "username": user.username,
             "email": user.email
         })
+    
+class ListaArchivosView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self, request):
+        archivos = [
+            f for f in os.listdir(settings.MEDIA_ROOT)
+            if os.path.isfile(os.path.join(settings.MEDIA_ROOT, f))
+        ]
+        return Response(archivos)
+
+
+class ArchivoDetalleView(APIView):
+    def get(self, request, nombre):
+        ruta = os.path.join(settings.MEDIA_ROOT, nombre)
+        with open(ruta, 'r', encoding='utf-8') as f:
+            contenido = f.read()
+        return Response({'nombre': nombre, 'contenido': contenido})
+    
+@api_view(['GET'])
+def observations_stats(request):
+    permission_classes = [AllowAny]
+    authentication_classes = []
+    observations = Observations.objects.all()
+
+    iniciada = 0
+    en_curso = 0
+    completada = 0
+    cerrada = 0
+
+    for obs in observations:
+        if obs.staste == "Iniciada":
+            iniciada += 1
+        elif obs.staste == "En curso":
+            en_curso += 1
+        elif obs.staste == "Completada":
+            completada += 1
+        elif obs.staste == "Cerrada":
+            cerrada += 1
+
+    return Response({
+        "Iniciada": iniciada,
+        "En curso": en_curso,
+        "Completada": completada,
+        "Cerrada": cerrada,
+    })

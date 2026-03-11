@@ -1,4 +1,3 @@
-/* === Animación de entrada === */
 @keyframes fadeInPage {
   from {
     opacity: 0;
@@ -13,43 +12,18 @@
 /* === Panel principal === */
 .observation-page {
   background-color: #be8734; /* fondo principal */
-  height: 100vh; /* altura exacta de la pantalla */
-  width: 100vw; /* ancho exacto, sin recortes */
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 4rem 2rem 2rem; /* espacio superior para que no se corte la primera tarjeta */
+  height: 100vh; /* ocupa toda la pantalla */
+  width: 100vw;
+  display: block; /* evita centrar el contenido */
+  padding: 4rem 2rem 2rem; /* espacio superior */
   box-sizing: border-box;
-  overflow-y: auto; /* solo scroll vertical */
-  overflow-x: hidden; /* elimina scroll horizontal */
+
+  /* Scroll natural sin scrolls dobles */
+  overflow-y: auto;
+  overflow-x: hidden;
+
   scroll-behavior: smooth;
   animation: fadeInPage 0.8s ease forwards;
-
-}
-
-/* === Lista de observaciones === */
-.observations-list {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  overflow: visible; /* evita scroll interno */
-}
-
-/* === Tarjetas === */
-.observation-card {
-  margin-top: 0.5rem;
-}
-
-/* === Texto cuando no hay observaciones === */
-.empty-list {
-  color: #ffd700;
-  text-align: center;
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-top: 3rem;
 }
 
 /* === Scrollbar personalizada === */

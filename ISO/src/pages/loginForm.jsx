@@ -8,17 +8,17 @@ export default function LoginForm() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  //  Manejar cambios en los inputs
+  const BASE_URL = "/api/app/Login/";
+
   const handleChange = e =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
-  //  Enviar formulario
   const handleSubmit = async e => {
     e.preventDefault();
     setError('');
 
     try {
-      const res = await fetch('http://localhost:8000/api/app/Login/', {
+      const res = await fetch(BASE_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,12 +31,9 @@ export default function LoginForm() {
       if (res.ok) {
         console.log('Login exitoso:', data);
 
-       
         setToken(data.token);
         localStorage.setItem("token", data.token);
 
-
-        //  Redirigir
         navigate('/observations');
       } else {
         setError(data.detail || 'Usuario o contraseña inválidos');
@@ -87,7 +84,7 @@ export default function LoginForm() {
             </button>
           </form>
         </div>
-
+        
         <div className="login-image">
           <img src="/Imagen1.bmp" alt="Decoración" />
         </div>

@@ -5,8 +5,13 @@ import '../style/registerForm.css';
 
 export default function RegisterForm() {
   const [form, setForm] = useState({
-    username: '', email: '', password: '', password2: '', cargo: ''
+    username: '',
+    email: '',
+    password: '',
+    password2: '',
+    cargo: ''
   });
+
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -19,25 +24,25 @@ export default function RegisterForm() {
   const handleChange = e =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
+  
+  const BASE_URL = "/api/app/Register/";
+
   const handleSubmit = async e => {
     e.preventDefault();
     setError('');
 
     try {
-      const res = await axios.post(
-        'http://localhost:8000/api/app/Register/',
-        form
-      );
+      const res = await axios.post(BASE_URL, form);
 
-      // ✅ Limpiar sesión anterior
+      // Limpiar sesión anterior
       localStorage.removeItem("token");
       localStorage.removeItem("user");
 
-      // ✅ Guardar token y usuario nuevo
+      // Guardar token y usuario nuevo
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
-      // ✅ Redirigir
+      // Redirigir
       navigate('/observations');
 
     } catch (error) {
@@ -59,14 +64,49 @@ export default function RegisterForm() {
           <form onSubmit={handleSubmit}>
             <h1>Registro</h1>
 
-            <input name="username" placeholder="Usuario" value={form.username} onChange={handleChange} required />
-            <input name="email" type="email" placeholder="Email" value={form.email} onChange={handleChange} required />
-            <input name="password" type="password" placeholder="Contraseña" value={form.password} onChange={handleChange} required />
-            <input name="password2" type="password" placeholder="Confirmar contraseña" value={form.password2} onChange={handleChange} required />
+            <input
+              name="username"
+              placeholder="Usuario"
+              value={form.username}
+              onChange={handleChange}
+              required
+            />
 
-            <label htmlFor="cargo">Cargo:</label>
-            <select name="cargo" value={form.cargo} onChange={handleChange} required>
-              <option value="">Seleccione un cargo</option>
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              name="password"
+              type="password"
+              placeholder="Contraseña"
+              value={form.password}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              name="password2"
+              type="password"
+              placeholder="Confirmar contraseña"
+              value={form.password2}
+              onChange={handleChange}
+              required
+            />
+
+            <label htmlFor="cargo">departamento:</label>
+            <select
+              name="cargo"
+              value={form.cargo}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Seleccione un departamento</option>
               {cargos.map((cargo, i) => (
                 <option key={i} value={cargo}>{cargo}</option>
               ))}
@@ -78,7 +118,7 @@ export default function RegisterForm() {
         </div>
 
         <div className="image-section">
-          <img src="/public/Imagen1.bmp" alt="Decoración" />
+          <img src="./Imagen1.bmp" alt="Decoración" />
         </div>
       </div>
     </div>

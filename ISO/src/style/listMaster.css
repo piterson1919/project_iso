@@ -1,0 +1,210 @@
+/* === Animación general === */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Contenedor principal === */
+.listfiles-split {
+  display: flex;
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px); /* espacio visible bajo el navbar */
+  margin-left: 220px; /* espacio del sidebar */
+  margin-top: 60px; /* espacio del navbar superior */
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #be8734;
+}
+
+/* === IZQUIERDA: información === */
+.listfiles-left {
+  flex: 0 0 35%;
+  background-color: #be8734;
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.listfiles-info {
+  background: linear-gradient(145deg, #412727, #2e1b1b);
+  border-radius: 16px;
+  padding: 2rem 2.2rem;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  color: #fff;
+  animation: slideIn 0.6s ease forwards;
+}
+
+.listfiles-logo {
+  color: #ffd700;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.listfiles-heading {
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.listfiles-description {
+  color: #f3f3f3;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* === DERECHA: listado === */
+.listfiles-right {
+  flex: 1;
+  background-color: #be8734;
+  padding: 2rem;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* === Contenedor de archivos === */
+.filelist-container {
+  width: 100%;
+  max-width: 900px;
+  background: linear-gradient(145deg, #412727, #2e1b1b);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  animation: slideIn 0.6s ease forwards;
+  color: #fff;
+}
+
+/* Encabezado */
+.filelist-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.filelist-title {
+  color: #ffd700;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.filelist-path {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+/* Contenido */
+.filelist-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Grid de archivos */
+.filelist-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Item */
+.filelist-item {
+  background-color: #ffffff;
+  color: #000;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.filelist-item:hover {
+  transform: translateY(-4px);
+  border-color: #ffd700;
+  background-color: #4b4b4b;
+  color: #fff;
+}
+
+.file-icon {
+  font-size: 1.8rem;
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: inherit;
+  word-break: break-word;
+}
+
+/* Mensaje vacío */
+.filelist-empty {
+  text-align: center;
+  color: #ffd700;
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+/* Scroll personalizado */
+.listfiles-right::-webkit-scrollbar {
+  width: 10px;
+}
+
+.listfiles-right::-webkit-scrollbar-thumb {
+  background-color: #412727;
+  border-radius: 8px;
+}
+
+.listfiles-right::-webkit-scrollbar-track {
+  background-color: #be8734;
+}
+
+/* === Responsivo === */
+@media (max-width: 1200px) {
+  .listfiles-split {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .listfiles-left,
+  .listfiles-right {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .filelist-container {
+    padding: 1.5rem;
+  }
+}
