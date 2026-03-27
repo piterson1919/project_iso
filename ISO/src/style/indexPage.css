@@ -1,6 +1,6 @@
 /* Página general */
 body{
-    background-color: #be8734;
+  background-color: #a0b0b9;
     overflow-x: hidden;
     overflow-y: hidden;
 
@@ -22,12 +22,12 @@ body{
 .dashboard-title {
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 800;
-  color: #2e2e2e;
+  color: #ffee00;
 }
 
 .dashboard-subtitle {
   font-size: clamp(1rem, 1.8vw, 1.2rem);
-  color: #555;
+  color: #e3e700;
   margin-top: 0.5rem;
 }
 

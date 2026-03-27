@@ -19,7 +19,8 @@ const authHeaders = () => ({
 // =======================
 
 const BASE_URL = "/api/app/observations/";
-const STATS_URL = "/api/app/stats/"
+const STATS_URL = "/api/app/stats/";
+const USER_URL = '/api/app/list_user/';
 
 // =======================
 // Observaciones
@@ -27,6 +28,7 @@ const STATS_URL = "/api/app/stats/"
 
 // Obtener todas las observaciones
 export const Allobservations = () =>
+  
   axios.get(BASE_URL, authHeaders());
 
 // Obtener una observación por ID
@@ -52,6 +54,16 @@ export const setToken = (token) => {
 export const index_stats = () => {
   return axios.get(STATS_URL, authHeaders());
 };
+
+// =======================
+// Usuarios
+// =======================
+
+export const AllUser = () =>{
+
+  axios.get(USER_URL, authHeaders());
+
+}
 
 // =======================
 // Login

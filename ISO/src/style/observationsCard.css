@@ -18,7 +18,7 @@
   border-radius: 16px;
   padding: 1.5rem 1.8rem;
   margin-bottom: 1.2rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  
   transition: all 0.25s ease;
   cursor: pointer;
   display: flex;
@@ -31,7 +31,7 @@
 .observation-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-  border-color: #000;
+ 
   background: linear-gradient(145deg, #f9e65c, #f3d333);
 }
 
@@ -41,49 +41,49 @@
 
 /* === FECHA VENCIDA → ROJO === */
 .card-expired {
-  background: linear-gradient(145deg, #ff6b6b, #f7de4f) !important;
+  background: linear-gradient(145deg, #ff6b6b,  #a0b0b9) !important;
   border-left-color: #b30000 !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  
 }
 
 .card-expired:hover {
-  background: linear-gradient(145deg, #ff8585, #ffe45c) !important;
+  background: linear-gradient(145deg, #ff8585,#a0b0b9) !important;
   border-left-color: #7a0000 !important;
 }
 
 /* === CERRADA → AZUL === */
 .card-closed {
-  background: linear-gradient(145deg, #8e90fd, #f7de4f) !important;
+  background: linear-gradient(145deg, #8e90fd,  #a0b0b9) !important;
   border-left-color: #3a3cc9 !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  
 }
 
 .card-closed:hover {
-  background: linear-gradient(145deg, #a3a5ff, #ffe45c) !important;
+  background: linear-gradient(145deg, #a3a5ff,  #a0b0b9) !important;
   border-left-color: #2a2ca0 !important;
 }
 
 /* === COMPLETADA → VERDE === */
 .card-completed {
-  background: linear-gradient(145deg, #aaf57f, #f7de4f) !important;
+  background: linear-gradient(145deg, #2e8d37, #a0b0b9) !important;
   border-left-color: #1f6b1f !important;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  
 }
 
 .card-completed:hover {
-  background: linear-gradient(145deg, #b8ff8a, #ffe45c) !important;
+  background: linear-gradient(145deg, #58a127, #a0b0b9) !important;
   border-left-color: #145014 !important;
 }
 
 /* === EN CURSO → NARANJA === */
 .card-progress {
-  background: linear-gradient(145deg, #fda643, #f7de4f) !important;
+  background: linear-gradient(145deg, #fda643,#a0b0b9) !important;
   border-left-color: #b86a1a !important;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
 }
 
 .card-progress:hover {
-  background: linear-gradient(145deg, #ffb86a, #ffe45c) !important;
+  background: linear-gradient(145deg, #ffb86a, #a0b0b9) !important;
   border-left-color: #8a4f12 !important;
 }
 
@@ -99,16 +99,16 @@
   top: 16px;
   right: 16px;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-  background-color: #f7f4e0;
+  
+  background-color: #f7f4e000;
 }
 
 .card-id {
   position: absolute;
   top: 10px;
   left: 16px;
-  background: #2e2e2e;
-  color: #ffd700;
+  background: #ffffff;
+  color: #008cff;
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.25rem 0.5rem;
@@ -139,7 +139,7 @@
 .card-origin {
   font-size: 0.9rem;
   color: #272727;
-  background-color: #fff6c4;
+  background-color: #ffffff;
   border-radius: 6px;
   padding: 0.4rem 0.6rem;
   font-weight: 600;
@@ -160,7 +160,7 @@
   font-size: 0.95rem;
   font-weight: 700;
   color: #000;
-  background-color: #fff4b6;
+  background-color: #ffffff;
   padding: 0.3rem 0.6rem;
   border-radius: 4px;
   width: fit-content;
@@ -187,11 +187,12 @@
 
 .card-file {
   display: inline-block;
-  background-color: #2e2e2e;
-  color: #ffd700;
+  background-color: #ffffff;
+  color: #1c6ebb;
   text-decoration: none;
   font-weight: 600;
   padding: 0.4rem 0.7rem;
+  border-color: #ffffff00;
   border-radius: 8px;
   margin-top: 0.4rem;
   transition: all 0.25s ease;
@@ -199,7 +200,7 @@
 }
 
 .card-file:hover {
-  background-color: #ffd700;
+  background-color: #e4e4e4;
   color: #2e2e2e;
   transform: translateY(-2px);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);

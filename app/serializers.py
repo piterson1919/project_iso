@@ -13,6 +13,13 @@ User = get_user_model()
 
 #posee la fase de validar el email y creacion de el usuario si todo es valido
 
+
+class ListUserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('username', 'email','password','cargo')
+
+
 class RegisterSerializer(serializers.ModelSerializer):
 
     username = serializers.CharField(

@@ -5,18 +5,18 @@
   left: 220px; /* igual al ancho del sidebar */
   right: 0;
   height: 70px;
-  background-color: #412727; /* mismo color del sidebar */
+   background-color: #016fa1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  
+  box-shadow: 0 4px 6px -2px rgba(0,0,0,0.3);
   z-index: 1500; /* por encima del sidebar */
 }
 
 /* Título */
 .topbar-title {
-  color: #f9e65c; /* amarillo del logo */
+  color: #ece800; /* amarillo del logo */
   font-size: 1.4rem;
   font-weight: bold;
   margin: 0;
@@ -36,7 +36,7 @@
 }
 
 .topbar-user:hover {
-  background-color: #f9e65c;
+  background-color: #f7da00;
   color: #2e2e2e;
 }
 

@@ -68,7 +68,8 @@ body {
 /* === Título === */
 .login-title {
   text-align: center;
-  color: #ffd000;
+  color: #ffffff;
+  
   margin-bottom: 2rem;
   letter-spacing: 1px;
   font-weight: 600;
@@ -106,11 +107,13 @@ body {
 .input-group input:focus {
   background: linear-gradient(145deg, #ffffff, #e8e8e8);
   box-shadow:
-    0 0 10px rgba(255, 208, 0, 0.8),
+
+    0 0 5px rgba(0, 132, 255, 0.8),
     inset 2px 2px 6px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px) scale(1.02);
 }
 
+/* === Botón 3D === */
 /* === Botón 3D === */
 .login-btn {
   margin-top: 10px;
@@ -118,33 +121,32 @@ body {
   padding: 14px;
   border: none;
   border-radius: 14px;
-  background: linear-gradient(145deg, #ffdd44, #e6b800);
-  color: #333;
+  background: linear-gradient(145deg, #0189c6, #016fa1);
+  color: #ffffff;
   font-weight: bold;
   font-size: 17px;
   cursor: pointer;
   box-shadow:
-    0 8px 0 #b89b00,
+    0 8px 0 #01557c,
     0 10px 20px rgba(0, 0, 0, 0.4);
   transition: all 0.2s ease-in-out;
   transform: translateZ(35px);
 }
 
 .login-btn:hover {
-  background: linear-gradient(145deg, #ffe066, #ffcc00);
+  background: linear-gradient(145deg, #0196d8, #0177ad);
   transform: translateY(-5px) translateZ(40px);
   box-shadow:
-    0 12px 0 #b89b00,
+    0 12px 0 #01557c,
     0 15px 25px rgba(0, 0, 0, 0.5);
 }
 
 .login-btn:active {
   transform: translateY(4px);
   box-shadow:
-    0 4px 0 #b89b00,
+    0 4px 0 #014a6b,
     0 8px 15px rgba(0, 0, 0, 0.4);
 }
-
 /* === Mensaje de error === */
 .error-message {
   color: #ff6565;
@@ -190,7 +192,7 @@ body {
 
 .login-image img:hover {
   transform: scale(1.07) rotate(1deg);
-  filter: drop-shadow(0 12px 25px rgba(255, 208, 0, 0.6));
+  filter: drop-shadow(0 12px 25px rgba(0, 153, 255, 0.6));
 }
 
 /* === Responsivo === */

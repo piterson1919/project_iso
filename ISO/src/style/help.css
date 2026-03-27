@@ -1,0 +1,185 @@
+@keyframes slideInHelp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === CONTENEDOR GENERAL === */
+
+.help-container {
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px);
+  margin-left: 220px;
+  margin-top: 60px;
+
+  padding: 2rem 3rem;
+
+    background-color: #a0b0b9;
+  overflow-y: auto;
+
+  box-sizing: border-box;
+  animation: slideInHelp 0.6s ease forwards;
+}
+
+/* === SCROLLBAR === */
+
+.help-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.help-container::-webkit-scrollbar-thumb {
+  background: #f9e65c;
+  border-radius: 10px;
+}
+
+.help-container::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+
+/* === TITULO PRINCIPAL === */
+
+.help-title {
+  color: #ffd700;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+/* === TITULOS DE SECCION === */
+
+.help-section-title {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
+}
+
+/* === SUBTITULOS === */
+
+.help-section-subtitle,
+.help-subtitle {
+  color: #ffd700;
+  font-size: 1.15rem;
+  margin-top: 1.4rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+/* === DIVISOR === */
+
+.help-divider {
+  border: none;
+  height: 2px;
+  background-color: #ffd700;
+  margin-bottom: 1rem;
+  width: 120px;
+}
+
+/* === TEXTO === */
+
+.help-text {
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+  max-width: 900px;
+}
+
+/* === LISTAS === */
+
+.help-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1rem;
+}
+
+.help-item {
+  background-color: #005075;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+  font-size: 0.92rem;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.35);
+}
+
+/* === TITULO DE ITEM === */
+
+.help-item-title {
+  color: #ffd700;
+  font-weight: 700;
+}
+
+.help-item-text {
+  margin-top: 0.3rem;
+}
+
+/* === SUBLISTAS === */
+
+.help-sublist {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.help-subitem {
+  background-color: rgba(255,255,255,0.05);
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+}
+
+/* === COLORES DE ESTADOS === */
+
+.color-red {
+  border-left: 6px solid #ff4444;
+}
+
+.color-green {
+  border-left: 6px solid #33cc66;
+}
+
+.color-orange {
+  border-left: 6px solid #ff8800;
+}
+
+.color-yellow {
+  border-left: 6px solid #f9e65c;
+}
+
+.color-blue {
+  border-left: 6px solid #4da3ff;
+}
+
+
+
+.help-item:hover {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease;
+}
+
+
+
+@media (max-width: 1000px) {
+
+  .help-container {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 60px;
+    padding: 1.5rem;
+  }
+
+  .help-text {
+    max-width: 100%;
+  }
+
+}

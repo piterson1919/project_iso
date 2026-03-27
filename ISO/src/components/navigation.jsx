@@ -22,6 +22,10 @@ export function Navigation() {
           <Link className="nav-link" to="/listMaster">Lista maestra</Link>
         </li>
 
+        <li className="nav-item">
+          <Link className="nav-link" to="/manual">Manual</Link>
+        </li>
+
         <li className="nav-item nav-logout">
           <Link className="nav-link" to="/main">Dejar sesión</Link>
         </li>

@@ -69,12 +69,12 @@ body {
 
 /* === Botón REGISTRO (amarillo oscuro elegante) === */
 .register-button {
-  background: linear-gradient(145deg, #ffdd44, #e6b800);
-  color: #333;
+  background: linear-gradient(145deg, #0295da,#016fa1);
+  color: #ebebeb;
 }
 
 .register-button:hover {
-  background: linear-gradient(145deg, #ffe066, #ffcc00);
+  background: linear-gradient(145deg, #0295da,#016fa1);
   transform: translateY(-6px);
   box-shadow:
     0 15px 30px rgba(0, 0, 0, 0.5),

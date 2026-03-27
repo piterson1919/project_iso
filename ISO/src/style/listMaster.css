@@ -19,13 +19,13 @@
   margin-top: 60px; /* espacio del navbar superior */
   box-sizing: border-box;
   overflow: hidden;
-  background-color: #be8734;
+   background-color: #a0b0b9; 
 }
 
 /* === IZQUIERDA: información === */
 .listfiles-left {
   flex: 0 0 35%;
-  background-color: #be8734;
+   background-color: #a0b0b9; 
   padding: 2rem 2.5rem;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@
 }
 
 .listfiles-info {
-  background: linear-gradient(145deg, #412727, #2e1b1b);
+  background: linear-gradient(145deg, #006696, #00608d);
   border-radius: 16px;
   padding: 2rem 2.2rem;
   width: 100%;
@@ -70,7 +70,7 @@
 /* === DERECHA: listado === */
 .listfiles-right {
   flex: 1;
-  background-color: #be8734;
+   background-color: #a0b0b9; 
   padding: 2rem;
   overflow-y: auto;
   height: 100%;
@@ -85,7 +85,7 @@
 .filelist-container {
   width: 100%;
   max-width: 900px;
-  background: linear-gradient(145deg, #412727, #2e1b1b);
+  background: linear-gradient(145deg, #006696, #00608d);
   border-radius: 16px;
   padding: 2rem;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
@@ -181,12 +181,12 @@
 }
 
 .listfiles-right::-webkit-scrollbar-thumb {
-  background-color: #412727;
+  background-color: #00608d;
   border-radius: 8px;
 }
 
 .listfiles-right::-webkit-scrollbar-track {
-  background-color: #be8734;
+   background-color: #a0b0b9; 
 }
 
 /* === Responsivo === */

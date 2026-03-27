@@ -9,9 +9,9 @@ from rest_framework.authtoken.models import Token
 from django.contrib.auth import get_user_model
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,permission_classes, authentication_classes
 
-from .serializers import RegisterSerializer, LoginSerializer, ObservationsSerializer
+from .serializers import RegisterSerializer, LoginSerializer, ObservationsSerializer,ListUserSerializer
 from .models import Observations
 
 User = get_user_model()
@@ -116,9 +116,11 @@ class ArchivoDetalleView(APIView):
         return Response({'nombre': nombre, 'contenido': contenido})
     
 @api_view(['GET'])
+@permission_classes([AllowAny])
+@authentication_classes([])
+
 def observations_stats(request):
-    permission_classes = [AllowAny]
-    authentication_classes = []
+
     observations = Observations.objects.all()
 
     iniciada = 0
@@ -142,3 +144,31 @@ def observations_stats(request):
         "Completada": completada,
         "Cerrada": cerrada,
     })
+
+@api_view(['GET', 'PUT','DELETE'])
+@permission_classes([AllowAny])
+@authentication_classes([])
+
+def ListUser(request):
+    queryset = User.objects.all()
+
+    if request.method == 'GET':
+        serializer = ListUserSerializer(queryset, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    elif request.method == 'PUT':
+        serializer = ListUserSerializer(data=request.data)
+
+        if serializer.is_valid():
+
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        queryset.delete()
+        return Response({'message': 'Usuario eliminado exitosamente'},status = status.HTTP_200_OK)
+    
+    return Response({'message':'no se pudo realizar el proceso'},status=status.HTTP_400_BAD_REQUEST)
+
+        

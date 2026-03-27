@@ -11,6 +11,7 @@ import { MainLayout } from './components/mainLayout';
 import { AuthLayout } from './components/authLayout';
 import { ListFiles } from "./pages/listMasterPage";
 import {DashboardPage} from "./pages/indexPage"
+import { Manual } from './pages/helpPage';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/observation/:id" element={<ObservationForm />} />
           <Route path="/listMaster" element={<ListFiles />} />
           <Route path="/index" element={<DashboardPage />} />
+          <Route path="/manual" element={<Manual/>} />
         </Route>
 
       </Routes>
