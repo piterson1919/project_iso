@@ -196,6 +196,23 @@ body {
 }
 
 /* === Responsivo === */
+
+/* Back button for login */
+.login-panel { position: relative; }
+.back-home {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(0,0,0,0.2);
+  border: none;
+  color: #fff;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+.back-home:hover { background: rgba(0,0,0,0.35); }
+
 @media (max-width: 768px) {
   .login-wrapper {
     flex-direction: column;

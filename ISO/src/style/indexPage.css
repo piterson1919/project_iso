@@ -2,7 +2,7 @@
 body{
   background-color: #a0b0b9;
     overflow-x: hidden;
-    overflow-y: hidden;
+    overflow-y: auto;
 
 }
 .dashboard-page {
@@ -38,3 +38,10 @@ body{
   width: 100%;
   margin-top: -3rem; 
 }
+
+@media (max-width: 768px) {
+  body { overflow-y: auto; }
+  .dashboard-page { margin-left: 0 !important; padding-top: 70px; }
+  .dashboard-content { margin-top: 0; }
+}
+
