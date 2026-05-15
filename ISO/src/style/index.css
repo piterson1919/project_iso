@@ -18,8 +18,13 @@
 /* Wrapper del gráfico */
 .chart-wrapper {
   width: 100%;
+
   height: auto;
   min-height: 260px;
+
+  height: 70vh;          
+  min-height: 420px;
+
   background: #ffffff;
   border-radius: 16px;
   padding: 1rem;
