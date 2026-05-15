@@ -12,11 +12,11 @@
 /* === Contenedor principal === */
 .user-split {
   display: flex;
-  width: calc(100vw - 220px);
-  height: calc(100vh - 60px); 
-  margin-left: 220px; 
-  margin-top: 60px; 
-  overflow: hidden; 
+  width: calc(100vw - var(--sidebar-width));
+  height: calc(100vh - var(--topbar-height));
+  margin-left: var(--sidebar-width);
+  margin-top: var(--topbar-height);
+  overflow: hidden;
   background-color: #a0b0b9;
   box-sizing: border-box;
 }

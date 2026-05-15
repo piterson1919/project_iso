@@ -13,10 +13,10 @@
 /* === Contenedor principal === */
 .listfiles-split {
   display: flex;
-  width: calc(100vw - 220px);
-  height: calc(100vh - 60px); /* espacio visible bajo el navbar */
-  margin-left: 220px; /* espacio del sidebar */
-  margin-top: 60px; /* espacio del navbar superior */
+  width: calc(100vw - var(--sidebar-width));
+  height: calc(100vh - var(--topbar-height)); /* espacio visible bajo el navbar */
+  margin-left: var(--sidebar-width); /* espacio del sidebar */
+  margin-top: var(--topbar-height); /* espacio del navbar superior */
   box-sizing: border-box;
   overflow: hidden;
    background-color: #a0b0b9; 
@@ -176,16 +176,16 @@
 }
 
 /* Scroll personalizado */
-.listfiles-right::-webkit-scrollbar {
+.filelist-right::-webkit-scrollbar {
   width: 10px;
 }
 
-.listfiles-right::-webkit-scrollbar-thumb {
+.filelist-right::-webkit-scrollbar-thumb {
   background-color: #00608d;
   border-radius: 8px;
 }
 
-.listfiles-right::-webkit-scrollbar-track {
+.filelist-right::-webkit-scrollbar-track {
    background-color: #a0b0b9; 
 }
 

@@ -1,4 +1,4 @@
-.observations-list {
+ .observations-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 🔹 exactamente dos por fila */
   gap: 1.5rem;
@@ -6,17 +6,17 @@
   box-sizing: border-box;
 
   /* 🔹 compensar el sidebar y navbar */
-  margin-left: 240px; /* deja espacio para el sidebar de 220px + margen */
-  margin-top: 80px; /* ajusta según la altura del navbar superior */
-  width: calc(100vw - 260px); /* resta el ancho del sidebar + padding */
+  margin-left: var(--sidebar-width);
+  margin-top: var(--topbar-height);
+  width: calc(100vw - var(--sidebar-width) - 20px); /* resta el ancho del sidebar + padding */
 }
 
 /* 🔸 Adaptación a pantallas pequeñas */
 @media (max-width: 1200px) {
   .observations-list {
     grid-template-columns: 1fr; /* solo una por fila en pantallas pequeñas */
-    margin-left: 220px;
-    width: calc(100vw - 240px);
+    margin-left: var(--sidebar-width);
+    width: calc(100vw - var(--sidebar-width) - 20px);
   }
 }
 
