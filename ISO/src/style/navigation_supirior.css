@@ -2,10 +2,10 @@
 .topbar {
   position: fixed;
   top: 0;
-  left: 220px; /* igual al ancho del sidebar */
+  left: var(--sidebar-width); /* igual al ancho del sidebar */
   right: 0;
-  height: 70px;
-   background-color: #016fa1;
+  height: var(--topbar-height);
+  background-color: #016fa1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -53,10 +53,11 @@
 
 /* Ajustes responsivos para topbar */
 @media (max-width: 1024px) {
-  .topbar { left: 80px; padding: 0 1rem; }
+  .topbar { left: var(--sidebar-width-collapsed,80px); padding: 0 1rem; }
 }
 
 @media (max-width: 768px) {
-  .topbar { left: 0 !important; height: 60px; padding: 0 0.75rem; }
+  .topbar { left: 0 !important; height: calc(var(--topbar-height) - 10px); padding: 0 0.75rem; }
   .topbar-title { font-size: 1.1rem; }
 }
+

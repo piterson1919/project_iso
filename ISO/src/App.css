@@ -2,7 +2,7 @@ html, body {
   overflow-x: hidden;
 }
 .content {
-  margin-left: 220px; 
+  margin-left: var(--sidebar-width); 
   padding: 20px;
   box-sizing: border-box;
 }
