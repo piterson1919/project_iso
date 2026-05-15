@@ -1,0 +1,236 @@
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === Contenedor principal === */
+.user-split {
+  display: flex;
+  width: calc(100vw - 220px);
+  height: calc(100vh - 60px); 
+  margin-left: 220px; 
+  margin-top: 60px; 
+  overflow: hidden; 
+  background-color: #a0b0b9;
+  box-sizing: border-box;
+}
+
+/* === IZQUIERDA: formulario === */
+.user-left {
+  flex: 0 0 45%;
+  padding: 1.6rem;
+  background-color: #a0b0b9;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* === Scrollbar izquierda oculta visualmente === */
+.user-left::-webkit-scrollbar {
+  width: 10px;
+}
+
+.user-left::-webkit-scrollbar-thumb {
+  background-color: #a0b0b9;
+}
+
+.user-left::-webkit-scrollbar-track {
+  background-color: #a0b0b9;
+}
+
+/* Firefox */
+.user-left {
+  scrollbar-width: thin;
+  scrollbar-color:#a0b0b9 #a0b0b9;
+}
+
+.user-container {
+  background-color: #00608d;
+  border-radius: 14px;
+  padding: 1.8rem 2rem;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.38);
+  animation: slideIn 0.6s ease forwards;
+}
+
+.user-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.user-logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffd700;
+  letter-spacing: 1.7px;
+  margin-bottom: 0.4rem;
+}
+
+.user-title {
+  color: #ffffff;
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* === Formulario === */
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: #ffd700;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  font-size: 0.95rem;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  background-color: #ffffff;
+  color: #000000;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 0.65rem;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #ffd700;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.form-textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form-error {
+  color: #ff4444;
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+}
+
+.btn-primary {
+  background-color: #ffd700;
+  color: #1a1a1a;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #e6c200;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background-color: transparent;
+  color: #ff4444;
+  border: 2px solid #ff4444;
+  border-radius: 10px;
+  padding: 0.7rem;
+  width: 100%;
+  font-weight: 600;
+  margin-top: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-delete:hover {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+/* === Campo de adjunto === */
+.form-note {
+  color: #fff;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+}
+
+/* === DERECHA: lista de usuarios === */
+.user-right {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  background-color: #a0b0b9;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* --- Scrollbar personalizada (derecha) --- */
+.user-right::-webkit-scrollbar {
+  width: 10px;
+}
+
+.user-right::-webkit-scrollbar-thumb {
+  background: #f9e65c;
+  border-radius: 10px;
+}
+
+.user-right::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+
+/* --- Ajuste interno para las UserCards --- */
+.user-right .users-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Responsivo --- */
+@media (max-width: 1300px) {
+  .user-split {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .user-left,
+  .user-right {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .user-right .users-list {
+    grid-template-columns: 1fr;
+  }
+}

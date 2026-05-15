@@ -62,6 +62,7 @@ export default function RegisterForm() {
       <div className="register-container">
         <div className="form-section">
           <form onSubmit={handleSubmit}>
+            <button className="back-home" onClick={() => navigate('/')}>← Inicio</button>
             <h1>Registro</h1>
 
             <input

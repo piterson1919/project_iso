@@ -20,7 +20,7 @@ const authHeaders = () => ({
 
 const BASE_URL = "/api/app/observations/";
 const STATS_URL = "/api/app/stats/";
-const USER_URL = '/api/app/list_user/';
+
 
 // =======================
 // Observaciones
@@ -58,12 +58,6 @@ export const index_stats = () => {
 // =======================
 // Usuarios
 // =======================
-
-export const AllUser = () =>{
-
-  axios.get(USER_URL, authHeaders());
-
-}
 
 // =======================
 // Login

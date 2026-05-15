@@ -1,0 +1,74 @@
+/* === ANIMACIÓN DE ENTRADA === */
+@keyframes slideInUserCards {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === CONTENEDOR GENERAL DE LOS USERS === */
+.user-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* tarjetas más anchas */
+  gap: 1.8rem; /* más separación entre tarjetas */
+  padding: 2rem;
+  background-color: #a0b0b9; /* gris azulado */
+  height: calc(100vh - 60px);
+  box-sizing: border-box;
+  animation: slideInUserCards 0.6s ease forwards;
+  overflow-y: auto; /* scroll vertical */
+
+  /* Scroll invisible pero funcional */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.user-cards::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+/* === TARJETAS DE USUARIO === */
+.user-card {
+  background-color: #005983; /* azul oscuro */
+  padding: 1.5rem 1.8rem; /* más padding para que sean más largas */
+  min-height: 150px; /* altura mínima para que se vean más largas */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: #ffffff;
+}
+
+.user-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+/* === NOMBRES DE USUARIO === */
+.user-card h3 {
+  color: #f7da00; /* dorado */
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* === EMAIL Y CARGO === */
+.user-card p {
+  font-size: 1rem;
+  margin: 0.3rem 0;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .user-cards {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+    height: calc(100vh - 60px);
+  }
+}
