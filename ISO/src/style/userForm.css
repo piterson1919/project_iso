@@ -10,7 +10,7 @@
 }
 
 /* === Contenedor principal === */
-.observation-split {
+.user-split {
   display: flex;
   width: calc(100vw - 220px);
   height: calc(100vh - 60px); 
@@ -22,7 +22,7 @@
 }
 
 /* === IZQUIERDA: formulario === */
-.observation-left {
+.user-left {
   flex: 0 0 45%;
   padding: 1.6rem;
   background-color: #a0b0b9;
@@ -35,25 +35,25 @@
 }
 
 /* === Scrollbar izquierda oculta visualmente === */
-.observation-left::-webkit-scrollbar {
+.user-left::-webkit-scrollbar {
   width: 10px;
 }
 
-.observation-left::-webkit-scrollbar-thumb {
-  background-color: #a0b0b9; /* mismo color que el fondo */
+.user-left::-webkit-scrollbar-thumb {
+  background-color: #a0b0b9;
 }
 
-.observation-left::-webkit-scrollbar-track {
+.user-left::-webkit-scrollbar-track {
   background-color: #a0b0b9;
 }
 
 /* Firefox */
-.observation-left {
+.user-left {
   scrollbar-width: thin;
   scrollbar-color:#a0b0b9 #a0b0b9;
 }
 
-.observation-container {
+.user-container {
   background-color: #00608d;
   border-radius: 14px;
   padding: 1.8rem 2rem;
@@ -63,12 +63,12 @@
   animation: slideIn 0.6s ease forwards;
 }
 
-.observation-header {
+.user-header {
   text-align: center;
   margin-bottom: 1.2rem;
 }
 
-.observation-logo {
+.user-logo {
   font-size: 1.6rem;
   font-weight: 800;
   color: #ffd700;
@@ -76,7 +76,7 @@
   margin-bottom: 0.4rem;
 }
 
-.observation-title {
+.user-title {
   color: #ffffff;
   font-size: 1.25rem;
   margin: 0;
@@ -84,7 +84,7 @@
 }
 
 /* === Formulario === */
-.observation-form {
+.user-form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -179,8 +179,8 @@
   border-radius: 6px;
 }
 
-/* === DERECHA: lista de observaciones === */
-.observation-right {
+/* === DERECHA: lista de usuarios === */
+.user-right {
   flex: 1;
   padding: 1.5rem 2rem;
   overflow-y: auto;
@@ -192,21 +192,21 @@
 }
 
 /* --- Scrollbar personalizada (derecha) --- */
-.observation-right::-webkit-scrollbar {
+.user-right::-webkit-scrollbar {
   width: 10px;
 }
 
-.observation-right::-webkit-scrollbar-thumb {
+.user-right::-webkit-scrollbar-thumb {
   background: #f9e65c;
   border-radius: 10px;
 }
 
-.observation-right::-webkit-scrollbar-track {
+.user-right::-webkit-scrollbar-track {
   background: #2e2e2e;
 }
 
-/* --- Ajuste interno para las ObservationCards --- */
-.observation-right .observations-list {
+/* --- Ajuste interno para las UserCards --- */
+.user-right .users-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
   gap: 1.5rem;
@@ -218,22 +218,19 @@
 
 /* --- Responsivo --- */
 @media (max-width: 1300px) {
-  .observation-split {
+  .user-split {
     flex-direction: column;
     height: auto;
-    width: 100%;
-    margin-left: 0;
-    margin-top: 60px;
   }
 
-  .observation-left,
-  .observation-right {
+  .user-left,
+  .user-right {
     width: 100%;
     height: auto;
     margin: 0;
   }
 
-  .observation-right .observations-list {
+  .user-right .users-list {
     grid-template-columns: 1fr;
   }
 }

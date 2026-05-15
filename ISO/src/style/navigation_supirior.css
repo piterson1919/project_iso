@@ -50,3 +50,13 @@
   font-size: 0.9rem;
   opacity: 0.8;
 }
+
+/* Ajustes responsivos para topbar */
+@media (max-width: 1024px) {
+  .topbar { left: 80px; padding: 0 1rem; }
+}
+
+@media (max-width: 768px) {
+  .topbar { left: 0 !important; height: 60px; padding: 0 0.75rem; }
+  .topbar-title { font-size: 1.1rem; }
+}

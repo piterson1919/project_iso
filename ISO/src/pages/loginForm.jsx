@@ -48,6 +48,7 @@ export default function LoginForm() {
     <div className="login-background">
       <div className="login-wrapper">
         <div className="login-panel">
+          <button className="back-home" onClick={() => navigate('/')}>← Inicio</button>
           <h1 className="login-title">Iniciar Sesión</h1>
 
           <form className="login-form" onSubmit={handleSubmit}>

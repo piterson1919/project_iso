@@ -12,6 +12,9 @@ import { AuthLayout } from './components/authLayout';
 import { ListFiles } from "./pages/listMasterPage";
 import {DashboardPage} from "./pages/indexPage"
 import { Manual } from './pages/helpPage';
+import Page from './pages/listUserPage';
+import UserForm from './pages/formUser'
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -39,6 +42,8 @@ function App() {
           <Route path="/listMaster" element={<ListFiles />} />
           <Route path="/index" element={<DashboardPage />} />
           <Route path="/manual" element={<Manual/>} />
+          <Route path="/listUser" element={<Page/>} />
+          <Route path="/userForm" element={<UserForm/>} />
         </Route>
 
       </Routes>

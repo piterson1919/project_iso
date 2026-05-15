@@ -67,3 +67,46 @@
   color: #fff;
   border-left: 4px solid #7a0000;
 }
+
+/* ===== Responsividad del sidebar ===== */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 80px;
+    padding-top: 1rem;
+  }
+
+  .sidebar-logo { display: none; }
+
+  .nav-link {
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
+  }
+
+  .nav-item { margin-bottom: 0.6rem; }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0.5rem 0;
+  }
+
+  .sidebar-links {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    padding: 0;
+  }
+
+  .nav-item { margin-bottom: 0; }
+
+  .nav-link { padding: 0.5rem 0; }
+}
