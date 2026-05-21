@@ -39,11 +39,11 @@ class Observations(models.Model):
 
     STANDART_ISO = (
 
-        [('ISO 9001: 2015','ISO 9001:2015'),('Norma Covenin 30','Norma Covenin 30'),('PDVSA EM 30-01V01','PDVSA EM 30-01V01')]
+        [('ISO 9001','ISO 9001'),('Norma Covenin 39','Norma Covenin 39'),('PDVSA EM 36-01/01','PDVSA EM 36-01/01'),('Procedimiento','Procedimiento')]
 
     )
 
-    observaciones = models.TextField(max_length=200)
+    observaciones = models.TextField(blank=True)
 
     standart = models.CharField(max_length=100, choices=STANDART_ISO ,default= 'Iniciada')    
 
@@ -51,7 +51,8 @@ class Observations(models.Model):
     end_date = models.DateField(default=default_end_date)
 
     DEPARTAMENT= [
-        ('Almacen', 'Almacen'),
+        ('Almacen FOOT', 'Almacen FOOT'),
+        ('Almacen FISSA', 'Almacen FISSA'),
         ('Gestion de calidad', 'Gestion de calidad'),
         ('Control de calidad', 'Control de calidad'),
         ('Direccion', 'Direccion'),
@@ -61,6 +62,11 @@ class Observations(models.Model):
         ('Seguridad y Salud Laboral', 'Seguridad y Salud Laboral'),
         ('Servicios generales', 'Servicios generales'),
         ('Ventas y Distribucion', 'Ventas y Distribucion'),
+        ('Compras', 'Compras'),
+        ('Logistica y Transporte', 'Logistica y Transporte'),
+        ('Produccion', 'Produccion'),
+        ('Ventas', 'Ventas'),
+        ('Mantenimiento Industrial', 'Mantenimiento Industrial'),
     ]
 
     departament = models.CharField(max_length=80,choices=DEPARTAMENT, default='ingrese un departamento')
@@ -68,7 +74,7 @@ class Observations(models.Model):
     close_note = models.TextField(blank = True)
 
     ORIGIN = (
-        [('Auditoria interna','Auditoria interna'),('Auditoria externa','auditoria externa')]
+        [('Auditoria interna','Auditoria interna'),('Auditoria externa','auditoria externa'),('producto','producto')]
     )
 
     origin = models.CharField(max_length=100, choices=ORIGIN ,default= 'Elegir origen')
@@ -81,3 +87,8 @@ class Observations(models.Model):
     
     )
 
+    ACTIONS = (
+        [('Accion correctiva','Accion correctiva'),('Accion preventiva','Accion preventiva'),('Correccion','Correccion')]
+    )
+
+    actions = models.CharField(choices = ACTIONS,default = 'Elegir una accion')

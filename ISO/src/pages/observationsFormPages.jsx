@@ -140,7 +140,7 @@ export default function ObservationForm() {
           <div className="observation-header">
             <div className="observation-logo">QMS</div>
             <h2 className="observation-title">
-              {params.id ? "Editar Observación" : "Registrar Observación"}
+              {params.id ? "Editar Accion" : "Registrar Accion"}
             </h2>
           </div>
 
@@ -182,6 +182,7 @@ export default function ObservationForm() {
                 <option value="Elegir origen">Elegir origen</option>
                 <option value="Auditoria interna">Auditoría interna</option>
                 <option value="Auditoria externa">Auditoría externa</option>
+                <option value="Producto">Producto</option>
               </select>
             </div>
 
@@ -198,7 +199,7 @@ export default function ObservationForm() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Nota de cierre</label>
+              <label className="form-label">Evaluacion de eficacia</label>
               <textarea
                 {...register("close_note")}
                 placeholder="Comentarios o acciones de cierre..."
@@ -210,9 +211,10 @@ export default function ObservationForm() {
               <label className="form-label">Norma / Estándar</label>
               <select {...register("standart", { required: true })} className="form-select">
                 <option value="">Seleccione una norma</option>
-                <option value="ISO 9001: 2015">ISO 9001:2015</option>
-                <option value="Norma Covenin 30">Norma Covenin 30</option>
-                <option value="PDVSA EM 30-01V01">PDVSA EM 30-01V01</option>
+                <option value="ISO 9001">ISO 9001</option>
+                <option value="Norma Covenin 39">Norma Covenin 39</option>
+                <option value="PDVSA EM 36-01/01">PDVSA EM 36-01/01</option>
+                <option value="Procedimiento">Procedimiento</option>
               </select>
             </div>
 
@@ -230,20 +232,22 @@ export default function ObservationForm() {
               <label className="form-label">Departamento responsable</label>
               <select {...register("departament", { required: true })} className="form-select">
                 <option value="">Seleccione un departamento</option>
-                <option value="Almacen">Almacén</option>
+                <option value="Almacen FOOT">Almacén FOOT</option>
+                <option value="Almacen FISSA">Almacén FISSA</option>
                 <option value="Gestion de calidad">Gestión de calidad</option>
                 <option value="Control de calidad">Control de calidad</option>
                 <option value="Direccion">Dirección</option>
                 <option value="Gerencia de productos">Gerencia de productos</option>
-                <option value="Informatica y Telecomunicaciones">
-                  Informática y Telecomunicaciones
-                </option>
+                <option value="Informatica y Telecomunicaciones">Informática y Telecomunicaciones</option>
                 <option value="RRHH">RRHH</option>
-                <option value="Seguridad y Salud Laboral">
-                  Seguridad y Salud Laboral
-                </option>
+                <option value="Seguridad y Salud Laboral">Seguridad y Salud Laboral</option>
                 <option value="Servicios generales">Servicios generales</option>
                 <option value="Ventas y Distribucion">Ventas y Distribución</option>
+                <option value="Compras">Compras</option>
+                <option value="Logistica y Transporte">Logística y Transporte</option>
+                <option value="Produccion">Producción</option>
+                <option value="Ventas">Ventas</option>
+                <option value="Mantenimiento Industrial">Mantenimiento Industrial</option>
               </select>
             </div>
 
@@ -265,7 +269,7 @@ export default function ObservationForm() {
                   className="btn-attach"
                   onClick={handleAttachFile}
                 >
-                  📎 Seleccionar archivo
+                   Seleccionar archivo
                 </button>
 
               </div>

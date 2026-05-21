@@ -18,8 +18,13 @@
 /* Wrapper del gráfico */
 .chart-wrapper {
   width: 100%;
+
+  height: auto;
+  min-height: 260px;
+
   height: 70vh;          
   min-height: 420px;
+
   background: #ffffff;
   border-radius: 16px;
   padding: 1rem;
@@ -30,6 +35,11 @@
   justify-content: center;
 
   animation: fadeUp 0.6s ease-out;
+}
+
+@media (max-width: 768px) {
+  .chart-wrapper { height: 45vh; min-height: 220px; }
+  .chart-container { max-width: 100%; padding: 0 0.5rem; }
 }
 
 /* ResponsiveContainer necesita esto */

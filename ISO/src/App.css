@@ -1,8 +1,24 @@
 html, body {
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 .content {
-  margin-left: 220px; 
+  margin-left: 220px;
+  margin-top: 70px;
   padding: 20px;
   box-sizing: border-box;
+  min-height: calc(100vh - 70px);
+}
+
+@media (max-width: 1024px) {
+  .content {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0;
+  }
 }

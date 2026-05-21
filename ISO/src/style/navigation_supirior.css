@@ -4,8 +4,9 @@
   top: 0;
   left: 220px; /* igual al ancho del sidebar */
   right: 0;
+  width: calc(100% - 220px);
   height: 70px;
-   background-color: #016fa1;
+  background-color: #016fa1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -20,6 +21,10 @@
   font-size: 1.4rem;
   font-weight: bold;
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60%;
 }
 
 /* Contenedor del usuario */
@@ -33,11 +38,24 @@
   padding: 8px 12px;
   border-radius: 6px;
   transition: background 0.2s ease;
+  flex-shrink: 0;
+  min-width: 180px;
+  max-width: 260px;
+  overflow: hidden;
 }
 
 .topbar-user:hover {
   background-color: #f7da00;
   color: #2e2e2e;
+}
+
+.user-name {
+  display: inline-block;
+  max-width: 140px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
 /* Icono */
@@ -49,4 +67,22 @@
 .user-arrow {
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+/* Ajustes responsivos para topbar */
+@media (max-width: 1024px) {
+  .topbar { left: 80px; width: calc(100% - 80px); padding: 0 1rem; }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    left: 0 !important;
+    width: 100% !important;
+    height: 60px;
+    padding: 0 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: space-between;
+  }
+  .topbar-title { font-size: 1.1rem; max-width: 100%; }
 }

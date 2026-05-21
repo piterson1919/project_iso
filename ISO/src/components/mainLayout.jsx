@@ -8,7 +8,7 @@ export function MainLayout() {
       <Navigation_superior />
       <Navigation />
 
-      <main>
+      <main className="content">
         <Outlet />
       </main>
     </div>
